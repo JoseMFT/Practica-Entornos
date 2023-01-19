@@ -89,16 +89,21 @@
       }
     },
     "com.unity.render-pipelines.high-definition": {
-      "version": "10.5.1",
+      "version": "12.1.7",
       "depth": 0,
-      "source": "registry",
+      "source": "builtin",
       "dependencies": {
-        "com.unity.render-pipelines.core": "10.5.1",
-        "com.unity.shadergraph": "10.5.1",
-        "com.unity.visualeffectgraph": "10.5.1",
-        "com.unity.render-pipelines.high-definition-config": "10.5.1"
-      },
-      "url": "https://packages.unity.com"
+        "com.unity.mathematics": "1.2.4",
+        "com.unity.burst": "1.6.0",
+        "com.unity.modules.video": "1.0.0",
+        "com.unity.modules.animation": "1.0.0",
+        "com.unity.modules.imageconversion": "1.0.0",
+        "com.unity.modules.terrain": "1.0.0",
+        "com.unity.render-pipelines.core": "12.1.7",
+        "com.unity.shadergraph": "12.1.7",
+        "com.unity.visualeffectgraph": "12.1.7",
+        "com.unity.render-pipelines.high-definition-config": "12.1.7"
+      }
     },
     "com.unity.render-pipelines.high-definition-config": {
       "version": "12.1.7",
