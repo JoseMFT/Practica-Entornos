@@ -22,10 +22,10 @@ public class SpaceshipMov1: MonoBehaviour {
         }
 
         if (Input.GetKey (KeyCode.LeftShift)) {
-            transform.position -= transform.right * speed * Time.deltaTime;
+            transform.position += transform.forward * speed * Time.deltaTime;
         }
 
-        transform.Rotate (new Vector3 (rotationShipX, rotationShipY, rotationShipZ), Space.Self);
+        transform.Rotate (new Vector3 (rotationShipX / 3f, rotationShipY / 4f, rotationShipZ / 5f) * speed, Space.Self);
         rotationShipX = 0f;
         rotationShipZ = 0f;
         rotationShipY = 0f;
