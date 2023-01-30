@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SpaceshipMov1: MonoBehaviour {
-    public float speed = .1f, rotationHor = 5000f, rotationVer = 4000f, rotationSensitivity = 1f;
+    public float speed = 15f, rotationHor = 50f, rotationVer = 40f, rotationSensitivity = 1f;
     public float rotationShipX, rotationShipY, rotationShipZ;
     // Start is called before the first frame update
     void Start () {
@@ -16,16 +16,16 @@ public class SpaceshipMov1: MonoBehaviour {
         rotationShipY = Input.GetAxis ("Horizontal") * rotationHor * Time.deltaTime;
 
         if (Input.GetKey ("q")) {
-            rotationShipX = -rotationSensitivity * rotationHor * .75f * Time.deltaTime;
-        } else if (Input.GetKey ("e")) {
             rotationShipX = rotationSensitivity * rotationHor * .75f * Time.deltaTime;
+        } else if (Input.GetKey ("e")) {
+            rotationShipX = -rotationSensitivity * rotationHor * .75f * Time.deltaTime;
         }
 
         if (Input.GetKey (KeyCode.LeftShift)) {
             transform.position += transform.forward * speed * Time.deltaTime;
         }
 
-        transform.Rotate (new Vector3 (rotationShipX / 3f, rotationShipY / 4f, rotationShipZ / 5f) * speed, Space.Self);
+        transform.Rotate (new Vector3 (rotationShipZ / 3f, rotationShipY / 4f, rotationShipX / 5f) * speed, Space.Self);
         rotationShipX = 0f;
         rotationShipZ = 0f;
         rotationShipY = 0f;
