@@ -1,0 +1,178 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4128808582559806041
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 6deed7ee90eb6e643a47dd6043d1336f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6deed7ee90eb6e643a47dd6043d1336f,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.28897297
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6deed7ee90eb6e643a47dd6043d1336f,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.29483688
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6deed7ee90eb6e643a47dd6043d1336f,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5809668
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6deed7ee90eb6e643a47dd6043d1336f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 107.9123
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6deed7ee90eb6e643a47dd6043d1336f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 15.6
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6deed7ee90eb6e643a47dd6043d1336f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 41.58
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6deed7ee90eb6e643a47dd6043d1336f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6deed7ee90eb6e643a47dd6043d1336f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6deed7ee90eb6e643a47dd6043d1336f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6deed7ee90eb6e643a47dd6043d1336f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6deed7ee90eb6e643a47dd6043d1336f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6deed7ee90eb6e643a47dd6043d1336f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6deed7ee90eb6e643a47dd6043d1336f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6deed7ee90eb6e643a47dd6043d1336f,
+        type: 3}
+      propertyPath: m_Name
+      value: Spaceship-buena
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6deed7ee90eb6e643a47dd6043d1336f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6deed7ee90eb6e643a47dd6043d1336f, type: 3}
+--- !u!1 &3858758417967648520 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6deed7ee90eb6e643a47dd6043d1336f,
+    type: 3}
+  m_PrefabInstance: {fileID: 4128808582559806041}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &491291594
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3858758417967648520}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 7796860072759842443, guid: 6deed7ee90eb6e643a47dd6043d1336f, type: 3}
+--- !u!114 &491291587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3858758417967648520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5e2ebc7ac4c2f5468a8df4c2dbf196d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 15
+  rotationHor: 50
+  rotationVer: 30
+  rotationSensitivity: 1
+  shootCD: 0
+  rotationShipX: 0
+  rotationShipY: 0
+  rotationShipZ: 0
+  laser: {fileID: 8268412286596535103, guid: 62fe1582c8ec4fa419e57f6b587e86b5, type: 3}
+  spawnRot: {fileID: 0}
+--- !u!114 &491291591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3858758417967648520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: e3f410e34e9aa2943aebff06e37e1e33, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3858758417967648520}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+--- !u!114 &491291595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3858758417967648520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea95b16229cb15541b248f56c5bf8127, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waterFX: {fileID: 1687118924408352, guid: 77c69ec12208c4c4380d15e30b6f8f68, type: 3}
+  crashFX: {fileID: 100000, guid: f06e78284f831ae469c74624ab5d513b, type: 3}
+  earthFX: {fileID: 1040608886635896, guid: a97415c6b57076f41a6621a7b51d63a3, type: 3}

@@ -5,7 +5,7 @@ using UnityEngine;
 public class IAEnemies: MonoBehaviour {
     public GameObject[] target;
     public int arrayPos = 0;
-    public float speed = 5f;
+    public float speed = 7.5f;
     Vector3 destination;
 
     [SerializeField]
