@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class SpaceshipMov1: MonoBehaviour {
     public static SpaceshipMov1 valoresCanvas;
-    public float speed = 15f, rotationHor = 50f, rotationVer = 30f, rotationSensitivity = 1f, shootCD = .1f;
+    public TextMeshProUGUI speedOMeter;
+    public Slider OverHeat;
+    public float speed = 15f, rotationHor = 50f, rotationVer = 30f, rotationSensitivity = 1f, shootCD = .25f;
     public float rotationShipX, rotationShipY, rotationShipZ;
     public GameObject laser, boostFX;
     public Rigidbody rigidBodyShip;
@@ -20,7 +24,7 @@ public class SpaceshipMov1: MonoBehaviour {
     // Update is called once per frame
     void Update () {
         if (shotsOverHeat > 0f) {
-            shotsOverHeat -= Time.deltaTime;
+            shotsOverHeat -= .1f * Time.deltaTime;
         }
         currentRot = transform.rotation.eulerAngles;
         rotationShipX = Input.GetAxis ("Vertical") * rotationVer * Time.deltaTime;
@@ -45,8 +49,8 @@ public class SpaceshipMov1: MonoBehaviour {
         }
 
         if (Input.GetKey ("left shift")) {
-            if (speed != 22.5) {
-                speed = 22.5f;
+            if (speed != 22.5 || speed! > 22.5f) {
+                speed += .5f * Time.deltaTime;
             }
             Instantiate (boostFX, transform.position, Quaternion.identity);
 
@@ -57,9 +61,11 @@ public class SpaceshipMov1: MonoBehaviour {
         if (shootCD > 0) {
             shootCD -= Time.deltaTime;
         } else if (Input.GetKey ("space")) {
-            shotsOverHeat += .1f;
-            Instantiate (laser, transform.position, Quaternion.Euler (currentRot));
-            shootCD = 1f;
+            if (shotsOverHeat < 1f) {
+                shotsOverHeat += .1f;
+                Instantiate (laser, transform.position, Quaternion.Euler (currentRot));
+                shootCD = .25f;
+            }
         }
 
         prevRot = currentRot;
@@ -71,6 +77,10 @@ public class SpaceshipMov1: MonoBehaviour {
         rotationShipX = 0f;
         rotationShipZ = 0f;
         rotationShipY = 0f;
+
+
+        speedOMeter.text = (speed * 20f).ToString (".00") + " Km/h";
+        OverHeat.value = shotsOverHeat;
     }
 
     public float AbsCalculator (float x) {
