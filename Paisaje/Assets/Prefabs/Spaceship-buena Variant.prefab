@@ -80,7 +80,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 6deed7ee90eb6e643a47dd6043d1336f,
         type: 3}
       propertyPath: m_Name
-      value: Spaceship-buena
+      value: Spaceship-buena Variant
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6deed7ee90eb6e643a47dd6043d1336f,
         type: 3}
@@ -106,7 +106,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 7796860072759842443, guid: 6deed7ee90eb6e643a47dd6043d1336f, type: 3}
 --- !u!114 &491291587
@@ -130,7 +130,7 @@ MonoBehaviour:
   rotationShipY: 0
   rotationShipZ: 0
   laser: {fileID: 8268412286596535103, guid: 62fe1582c8ec4fa419e57f6b587e86b5, type: 3}
-  spawnRot: {fileID: 0}
+  boostFX: {fileID: 0}
 --- !u!114 &491291591
 MonoBehaviour:
   m_ObjectHideFlags: 0

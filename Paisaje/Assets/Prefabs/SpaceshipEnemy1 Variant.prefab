@@ -80,7 +80,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: be40375296fe83f499f35e05d9bda639,
         type: 3}
       propertyPath: m_Name
-      value: SpaceshipEnemy1
+      value: SpaceshipEnemy1 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: be40375296fe83f499f35e05d9bda639,
         type: 3}
@@ -95,6 +95,20 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1325746505570360595}
   m_PrefabAsset: {fileID: 0}
+--- !u!64 &262137633
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2208055459346227266}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 7796860072759842443, guid: be40375296fe83f499f35e05d9bda639, type: 3}
 --- !u!114 &262137630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,8 +130,8 @@ MonoBehaviour:
   dest4: {fileID: 0}
   dest5: {fileID: 0}
   dest6: {fileID: 0}
---- !u!64 &262137633
-MeshCollider:
+--- !u!65 &4682615445913722920
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -126,7 +140,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 7796860072759842443, guid: be40375296fe83f499f35e05d9bda639, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 5.516899, y: 2.9670873, z: 1.8800304}
+  m_Center: {x: 0, y: 0.19290543, z: 0.034108736}

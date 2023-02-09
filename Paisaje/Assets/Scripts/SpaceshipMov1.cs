@@ -3,26 +3,46 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SpaceshipMov1: MonoBehaviour {
-    public float speed = 15f, rotationHor = 50f, rotationVer = 30f, rotationSensitivity = 1f, shootCD = .25f;
+    public static SpaceshipMov1 valoresCanvas;
+    public float speed = 15f, rotationHor = 50f, rotationVer = 30f, rotationSensitivity = 1f, shootCD = .1f;
     public float rotationShipX, rotationShipY, rotationShipZ;
     public GameObject laser, boostFX;
+    public Rigidbody rigidBodyShip;
+    public float shotsOverHeat = 0f;
+
     // Start is called before the first fr
     Vector3 prevRot, currentRot;
     void Start () {
+        rigidBodyShip = gameObject.GetComponent<Rigidbody> ();
         currentRot = transform.position;
     }
 
     // Update is called once per frame
     void Update () {
-
-        rotationShipZ = Input.GetAxis ("Vertical") * rotationVer * Time.deltaTime;
+        if (shotsOverHeat > 0f) {
+            shotsOverHeat -= Time.deltaTime;
+        }
+        currentRot = transform.rotation.eulerAngles;
+        rotationShipX = Input.GetAxis ("Vertical") * rotationVer * Time.deltaTime;
         rotationShipY = Input.GetAxis ("Horizontal") * rotationHor * Time.deltaTime;
 
-        /*if (Input.GetKey ("q")) {
-            rotationShipX = rotationSensitivity * rotationHor * .75f * Time.deltaTime;
+        if (Input.GetKey ("q")) {
+            rotationShipZ = rotationSensitivity * rotationHor * .75f * Time.deltaTime;
         } else if (Input.GetKey ("e")) {
-            rotationShipX = -rotationSensitivity * rotationHor * .75f * Time.deltaTime;
-        }*/
+            rotationShipZ = -rotationSensitivity * rotationHor * .75f * Time.deltaTime;
+        }
+
+        if (!Input.GetKey ("q") && !Input.GetKey ("e") && prevRot.x != currentRot.x) {
+            ResetRigidBody ();
+        }
+
+        if (AbsCalculator (Input.GetAxis ("Vertical")) <= 0.0001f && AbsCalculator (Input.GetAxis ("Horizontal")) >= -.001f && prevRot.z != currentRot.x) {
+            ResetRigidBody ();
+        }
+
+        if (AbsCalculator (Input.GetAxis ("Horizontal")) <= 0.0001f && AbsCalculator (Input.GetAxis ("Horizontal")) <= 0.0001f && prevRot.y != currentRot.y) {
+            ResetRigidBody ();
+        }
 
         if (Input.GetKey ("left shift")) {
             if (speed != 22.5) {
@@ -36,18 +56,30 @@ public class SpaceshipMov1: MonoBehaviour {
 
         if (shootCD > 0) {
             shootCD -= Time.deltaTime;
-        } else {
-            if (Input.GetKey ("space")) {
-                Instantiate (laser, transform.position, transform.rotation);
-                shootCD = 1f;
-            }
+        } else if (Input.GetKey ("space")) {
+            shotsOverHeat += .1f;
+            Instantiate (laser, transform.position, Quaternion.Euler (currentRot));
+            shootCD = 1f;
         }
+
+        prevRot = currentRot;
+
 
         transform.position += transform.forward * speed * Time.deltaTime;
 
-        transform.Rotate (new Vector3 (rotationShipZ / 3f, rotationShipY / 4f, rotationShipX / 5f) * speed, Space.Self);
+        transform.Rotate (new Vector3 (rotationShipX / 3f, rotationShipY / 4f, rotationShipZ / 5f) * speed, Space.Self);
         rotationShipX = 0f;
         rotationShipZ = 0f;
         rotationShipY = 0f;
+    }
+
+    public float AbsCalculator (float x) {
+        float y = Mathf.Abs (x);
+        return y;
+    }
+
+    public void ResetRigidBody () {
+        rigidBodyShip.constraints = RigidbodyConstraints.FreezeAll;
+        rigidBodyShip.constraints = RigidbodyConstraints.None;
     }
 }
