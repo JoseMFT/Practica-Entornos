@@ -27,24 +27,20 @@ public class LaserBehaviour: MonoBehaviour {
         }
     }
 
-    private void OnCollisionEnter (Collision collision) {
-        Mensaje ();
-        contacPos = collision.contacts[0].point;
-        if (collision.gameObject.tag == "Ship") {
-            Instantiate (explosionFX, contacPos, transform.rotation);
-            EnemyHealth.health.shipHP -= 50f;
-            Destroy (gameObject);
-        } else if (collision.gameObject.tag == "Suelo") {
-            Instantiate (soilFX, contacPos, transform.rotation);
-            Destroy (gameObject);
-        }
-    }
-
     private void OnTriggerEnter (Collider other) {
-        Debug.Log ("agua");
+        
         contacPos = other.ClosestPoint (transform.position);
         if (other.gameObject.tag == "Water") {
+            Debug.Log ("agua");
             Instantiate (waterFX, contacPos, transform.rotation);
+            Destroy (gameObject);
+        } else if (other.gameObject.tag == "Ship") {
+            Debug.Log ("touched enemies");
+            Instantiate (explosionFX, contacPos, transform.rotation);
+            Destroy (gameObject);
+        } else if (other.gameObject.tag == "Suelo") {
+            Debug.Log ("touched floor");
+            Instantiate (soilFX, contacPos, transform.rotation);
             Destroy (gameObject);
         }
     }

@@ -59,9 +59,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: techno_hideo_bold SDF
   m_EditorClassIdentifier: 
-  hashCode: 0
+  hashCode: -534610592
   material: {fileID: 693279888120205256}
-  materialHashCode: 0
+  materialHashCode: 1874117568
   m_Version: 1.1.0
   m_SourceFontFileGUID: b37b39853d972c74e89330a98f69a3c7
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: b37b39853d972c74e89330a98f69a3c7,
@@ -2191,9 +2191,9 @@ Material:
     - _OutlineWidth: 0
     - _PerspectiveFilter: 0.875
     - _Reflectivity: 10
-    - _ScaleRatioA: 1
-    - _ScaleRatioB: 1
-    - _ScaleRatioC: 1
+    - _ScaleRatioA: 0.8333333
+    - _ScaleRatioB: 0.6770833
+    - _ScaleRatioC: 0.6770833
     - _ScaleX: 1
     - _ScaleY: 1
     - _ShaderFlags: 0

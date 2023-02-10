@@ -8,6 +8,7 @@ TagManager:
   - FxTemporaire
   - Ship
   - Water
+  - Laser
   layers:
   - Default
   - TransparentFX

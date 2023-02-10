@@ -49,13 +49,16 @@ public class SpaceshipMov1: MonoBehaviour {
         }
 
         if (Input.GetKey ("left shift")) {
-            if (speed != 22.5 || speed! > 22.5f) {
-                speed += .5f * Time.deltaTime;
+            if (speed != 22.5 || speed !> 22.5f) {
+                speed += .65f * Time.deltaTime;
             }
             Instantiate (boostFX, transform.position, Quaternion.identity);
 
         } else if (!Input.GetKey ("left shift") && speed != 15f) {
-            speed = 15f;
+            speed -= .85f * Time.deltaTime;
+            if (speed < 15f) {
+                speed = 15f;
+            }
         }
 
         if (shootCD > 0) {
