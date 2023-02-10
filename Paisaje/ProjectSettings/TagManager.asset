@@ -9,6 +9,7 @@ TagManager:
   - Ship
   - Water
   - Laser
+  - PowerUp
   layers:
   - Default
   - TransparentFX
