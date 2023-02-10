@@ -5,7 +5,7 @@ using UnityEngine;
 public class PowerUps: MonoBehaviour {
     public GameObject[] target;
     int arrayPos;
-    public GameObject powerUpPrefab, currentPowerUp, shipCompass, compassArrow;
+    public GameObject powerUpPrefab, currentPowerUp;
     [SerializeField]
     GameObject dest1, dest2, dest3, dest4, dest5, dest6;
     public float powerUpSpawnTime = 40f, spawnTimeReference;
@@ -29,16 +29,7 @@ public class PowerUps: MonoBehaviour {
             }
             powerUpSpawnTime = spawnTimeReference;
             currentPowerUp = Instantiate (powerUpPrefab, target[Randomize (arrayPos)].transform.position, Quaternion.identity);
-            if (shipCompass.activeSelf == false) {
-                shipCompass.SetActive (true);
-            }
         }
-
-        if (currentPowerUp != null) {
-            shipCompass.transform.LookAt (currentPowerUp.transform.position);
-            compassArrow.transform.localRotation = Quaternion.Euler (0f, 0f, shipCompass.transform.rotation.y);
-        }
-
     }
     private void OnTriggerEnter (Collider other) {
         if (other.gameObject.tag == "PowerUp") {
