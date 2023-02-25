@@ -12,11 +12,11 @@ public class Collisions: MonoBehaviour {
     }
 
     private void OnTriggerEnter (Collider other) {
-        contacPos = other.ClosestPoint (transform.position);
-        Debug.Log ("Hit Water");
-        if (other.gameObject.tag == "Water") {
-            Instantiate (waterFX, contacPos, transform.rotation);
-        }
+        WaterSparkles (other);
+    }
+    
+    private void OnTriggerExit (Collider exitOther) {
+        WaterSparkles (exitOther);
     }
 
     private void OnCollisionEnter (Collision collision) {
@@ -37,5 +37,13 @@ public class Collisions: MonoBehaviour {
     public void ResetRB () {
         rigidBodyShip.constraints = RigidbodyConstraints.FreezeAll;
         rigidBodyShip.constraints = RigidbodyConstraints.None;
+    }
+
+    public void WaterSparkles (Collider collision) {
+        contacPos = collision.ClosestPoint (transform.position);
+        Debug.Log ("Hit Water");
+        if (collision.gameObject.tag == "Water") {
+            Instantiate (waterFX, contacPos, transform.rotation);
+        }
     }
 }
